@@ -33,6 +33,7 @@ const Parent = () => {
         <input
           type="text"
           placeholder="Item Name"
+          id="itemName"
           value={itemName}
           onChange={(e) => setItemName(e.target.value)}
         />
@@ -42,6 +43,7 @@ const Parent = () => {
         <input
           type="number"
           placeholder="Item Price"
+          id="itemPrice"
           value={itemPrice}
           onChange={(e) => setItemPrice(e.target.value)}
         />
@@ -60,7 +62,8 @@ const Child = ({ cartItems, handleRemoveItem }) => {
       {cartItems.map(item => (
         <div key={item.id} className="item">
             <ul>
-                <li><span id="itemName">{item.name}-</span>
+                <li>
+                <span id="itemName">{item.name}-</span>
                 <span id="itemPrice">${item.price}</span>
                 <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
                 </li>
